@@ -1,0 +1,105 @@
+.about-show-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+    margin-left: -100px;
+    margin-bottom: 70px;
+}
+.about-show {
+    width: 50%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+  }
+  .about-show:before, .about-show:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  .about-show:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+  }
+  .about-show:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+  }
+
+  /*ABOUT COMPANY*/
+  .AboutCompany{
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+      width: 95%;
+  }
+  .AboutCompany h2{
+      padding-bottom: 2em;
+  }
+  .AboutCompany span{
+      padding-top: 2em;
+  }
+  .AboutCompany h3{
+      font-size: 18px;
+      font-weight: 600;
+      padding: 20px 0px;
+  }
+  .AboutCompany ul{
+      padding: 1em 20px;
+
+      align-self: flex-start;
+  }
+  .AboutCompany ul li{
+    padding:2px 0px;
+  }
+  .AboutCompany p{
+      align-self: flex-start;
+    text-indent: 2em;
+  }
+  .OurPossibility p{
+    text-align: left;
+  }
+  .OurPossibility h2{
+    text-align: center;
+  }
+  
+
+  @media screen and (orientation:portrait) {
+    .production-list p{
+      margin: 0 30px;
+    }
+    .about-show-container{
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .about-show{
+      width: 95%;
+      font-size: 13px;
+    }
+    .about-show:before, .about-show:after {
+      content: "";
+      transform: none
+    }
+    .AboutCompany ul{
+      padding: 1em 10px;
+
+      align-self: flex-start;
+  }
+    
+  }

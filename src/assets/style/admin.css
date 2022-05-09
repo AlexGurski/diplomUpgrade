@@ -1,0 +1,53 @@
+.all-admin{
+    display: flex;
+}
+.all-admin > select{
+    width: 30%;
+}
+.admin-catalog{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    color: white;
+}
+.admin-catalog *{
+    width: 300px;
+}
+.feedback{
+    width: 500px;
+   
+    color:white
+}
+.feedback > div{
+    border: 1px dotted white;
+    padding: 5px;
+    margin: 5px 0;
+}
+.choiseBox{
+    width:50px;
+    height:50px;
+    z-index: 999;
+    border-radius: 50%;
+    border: 1px solid black;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 10;
+    cursor: pointer;
+}
+.choiseBox:hover{
+    transform: scale(1.2);
+}
+
+.newsItem{
+    display: flex;
+    flex-direction: column;
+    color: antiquewhite;
+}
+
+
+
+/* menu */
+
+  
