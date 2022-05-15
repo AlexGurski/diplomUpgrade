@@ -24,21 +24,21 @@ function HomepageFirst() {
           <div className='homepage-contacts-container'>
             <div className='homepage-contacts-left'>
               <div>
-              <span  data-aos="fade-right" >Адрес</span>
-              <span className='head-adres' data-aos="fade-right"><BiMap className='info-ico'  />Республика Беларусь,г. Барановичи, ул. Пролетарская, 40</span>
+              <span   >Адрес</span>
+              <span className='head-adres'><BiMap className='info-ico'  />Республика Беларусь,г. Барановичи, ул. Пролетарская, 40</span>
               </div>
               <div>
-              <span  data-aos="fade-right">Телефон</span>
-            <span className='head-phone' data-aos="fade-right"><BiPhoneCall className='info-ico'  />375 163 67-25-73 </span>   
+              <span  >Телефон</span>
+            <span className='head-phone' ><BiPhoneCall className='info-ico'  />375 163 67-25-73 </span>   
             </div>   
             <div>
-              <span  data-aos="fade-right">Электронная почта</span>         
-              <span className='head-email' data-aos="fade-right"><SiMaildotru className='info-ico'  />bzsp.omip@gmail.com </span> 
+              <span  >Электронная почта</span>         
+              <span className='head-email' ><SiMaildotru className='info-ico'  />bzsp.omip@gmail.com </span> 
             </div>
           </div>
           <div>
               <YMaps  >
-                <Map  width='100%' height='100%' defaultState={mapData} data-aos="fade-left" data-aos-duration="3000">
+                <Map  width='100%' height='100%' defaultState={mapData} >
                 {coordinates.map(coordinate => <Placemark geometry={coordinate} />)}
                 </Map>
             </YMaps>

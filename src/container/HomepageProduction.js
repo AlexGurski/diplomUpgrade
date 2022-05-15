@@ -11,10 +11,10 @@ function HomepageProduction() {
     <>
     <div className='homepage-about'>
          <div  className='homepage-about-container'>
-            <h2 className='homepage-about-left' data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" >
+            <h2 className='homepage-about-left'  >
                 Мы производитель универсальной зажимной технологической оснастки, а также узлы и детали для автомобильной и тракторной техники
             </h2>
-            <div  className='homepage-about-right' data-aos="fade-left"  data-aos-easing="ease-in-sine" >
+            <div  className='homepage-about-right'>
               <h3>
                 Производим и продаем универсальную зажимную технологическую оснастку для токарных, фрезерных, сверлильных и строгальных станков, а также узлы и детали для автомобильной и тракторной техники.
               </h3>

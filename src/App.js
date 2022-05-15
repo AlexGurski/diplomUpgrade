@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {Routes, Route, Link} from 'react-router-dom'
-import Header from './Header';
+import {Header} from './Header';
 import { Homepage } from './pages/Homepage';
 import { Catalog } from './pages/Catalog';
 import { Productions } from './pages/Productions';
@@ -39,10 +39,9 @@ const App = () =>{
      })
      },[])
      return (<>
-
-          <Header/>{/*главное меню которое будет отражено на всех страницах без перезагрузки страницы  */ }    
-          <Routes> {/* пути для страниц. браузер определяет куда осуществляется переход и рендерит заданный компонент  */ }   
-               <Route path='/' element={<Homepage news={stateNews} />}/>  
+     <Routes>
+          <Route path='/' element={<Header/>}>
+               <Route index element={<Homepage/>}/>
                <Route path='/catalog' element={<Catalog db={state}/> }/> 
                <Route path="/catalog/:id" element={<Productions db={state}/>} />
                <Route path="/search/:id" element={<Search  db={state}/>} />
@@ -51,9 +50,10 @@ const App = () =>{
                <Route path='/admin' element={<Admin/> }/>  
                <Route path='/contacts' element={<Contacts/> }/>  
                <Route path='/about' element={<About/> }/>  
+          </Route>
                <Route path='/*' element={<NotFound/> }/> 
-          </Routes>   
-          <Footer/>{/*футер который будет отражен на всех страницах без перезагрузки страницы  */ }   
+      </Routes>
+
           
           
           
