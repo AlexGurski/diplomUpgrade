@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./assets/style/style.css"
+import "./assets/style/header-style.css"
 import {Link, Outlet}  from 'react-router-dom'
 
 const Menu =(props) =>{
@@ -32,7 +32,7 @@ const Header = () => {
         <>
             <div className="header">
                 <div className="header_text">
-                    Alex Gurski
+                 <img src={require('./assets/img/logo1.png')}/> <span>ОАО «Барановичский завод станкопринадлежностей»</span>
                 </div>
                 <Menu/>
             </div>

@@ -7,7 +7,6 @@ import { Productions } from './pages/Productions';
 import { Search } from './pages/Search';
 import { Product} from './pages/Product';
 import { Contacts } from './pages/Contacts';
-import Footer from './Footer';
 import Admin from './Admin';
 import {News} from './pages/News';
 import {About} from './pages/About';
@@ -49,9 +48,10 @@ const App = () =>{
                <Route path='/news' element={<News news={stateNews}/> }/>  
                <Route path='/admin' element={<Admin/> }/>  
                <Route path='/contacts' element={<Contacts/> }/>  
-               <Route path='/about' element={<About/> }/>  
+               <Route path='/about' element={<About/> }/> 
+               <Route path='/*' element={<NotFound/> }/>  
           </Route>
-               <Route path='/*' element={<NotFound/> }/> 
+              
       </Routes>
 
           

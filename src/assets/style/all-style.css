@@ -2,6 +2,11 @@
 	font-family: 'Merriweather'; 
 	src: url(./../font/Merriweather-Light.ttf); 
 }
+@font-face {
+	font-family: 'Freight'; 
+	src: url(./../font/FreightSansLightSC.ttf); 
+}
+
 *{
     margin: 0;
     padding: 0;
