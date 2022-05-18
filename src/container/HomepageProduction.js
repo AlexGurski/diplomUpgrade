@@ -9,7 +9,7 @@ function HomepageProduction() {
   },[])
   return (
     <>
-    <div className='homepage-about'>
+    <div className='homepage-about' id='homepage-about'>
          <div  className='homepage-about-container'>
             <h2 className='homepage-about-left'  >
                 Мы производитель универсальной зажимной технологической оснастки, а также узлы и детали для автомобильной и тракторной техники

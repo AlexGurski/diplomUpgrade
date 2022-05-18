@@ -14,33 +14,40 @@ $colorBisq:bisque;
 .header{
     z-index: 200;
     flex-basis: 10%;
-    padding: 100px 70px 0 70px;
-    width: 100vw;
-    color: white;
+    color: bisque;
     position: fixed;
+    top:50px;
+    right: 50px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     font-family: Freight;
     justify-content: space-between;
     font-weight: 300px;
     @media screen and (orientation:portrait){
         font-size: 15px;
+        top:10px;
+        right: 10px;
     }
-        &_nav{           
-            cursor: pointer;
-            transition: all 0.7s;
-            font-size: 35px;
+        
+        &_box{
+            margin-right: 20px;    
+            cursor: pointer;  
+            font-size: 30px;  
+            color: bisque;
             @media screen and (orientation:portrait){
-                font-size: 25px;
-            }
-        }
-        &_text{
-            display: flex;
-            align-items: center;
-            img{
-                margin-right: 20px;
-            }
+                font-size: 30px;  
+            }         
+                &_count{
+                    position: relative;
+                    left: -30px;
+                    padding: 3px 7px;
+                    font-size: 10px;
+                    border-radius: 50%;
+                    background-color: gold;
+                    color:black
+                }
+            
         }
 }
 

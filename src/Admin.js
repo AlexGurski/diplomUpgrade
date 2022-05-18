@@ -7,7 +7,6 @@ import {MdOutlineCancel} from "react-icons/md";
 import {IoIosEye} from "react-icons/io";
 import {BsEyeSlashFill} from "react-icons/bs"
 import {GrStatusGood} from "react-icons/gr"
-import Autorization from './container/Autirization'
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database().ref('feedback');
 const ref = firebase.database().ref('catalog/');
@@ -15,7 +14,11 @@ const newsDB = firebase.database().ref('news/');
 
 let now = new Date().toLocaleDateString()
 
-const Admin = () => {
+export const Admin = ({display}) => {
+  const [styleAdmin,setStyleAdmin] = useState({display:'none'})
+  useEffect(()=>{
+    setStyleAdmin(display)
+  },[display])
   const [feedback, setFeedback] = useState([])
   const [news, setNews] = useState({
     name:'',
@@ -34,18 +37,14 @@ const Admin = () => {
   const [plan, setPlan] = useState('');
   const [pdf, setPdf] = useState('');
   const [video, setVideo] = useState('');
-
   const [textar, setTexta] = useState('');
   const [dataBase, setDataBase] = useState([]);
   const [dataBase1, setDataBase1] = useState([]);
   const [editType, setEditType] = useState('');
 
-  const [permission, setPermission] = useState();
-  const [display, setDisplay] = useState({display:'none'})
 
-  useEffect(()=>{
-    permission==1?setDisplay({display:'flex'}):setDisplay({display:'none'})
-  },[permission])
+
+
 
   useEffect(()=>{
     console.log(now)
@@ -173,8 +172,7 @@ const responsed = (e, clickY, clickX) =>{
 }
   return (
     <>
-    <Autorization onAutorization={async (el)=>{setPermission(el.permission)}}/>
-    <div className='all-admin' style={display}>
+    <div className='all-admin' style={styleAdmin}>
      
       {box}
     <div  className='admin-catalog'> 
@@ -273,7 +271,6 @@ const responsed = (e, clickY, clickX) =>{
       <div className='feedback'>
           {Object.keys(feedback).map((el)=>
           <div  onClick={click=>responsed(el, click.clientY, click.clientX)} key={el} style={responsibleColor(feedback[el].response)}>
-          
             <h2>{feedback[el].name}</h2>
             <h5>{feedback[el].organization}</h5>
             <p>{feedback[el].phone}</p>
@@ -299,4 +296,3 @@ const responsed = (e, clickY, clickX) =>{
 </>  
   );
 }
-export default Admin 

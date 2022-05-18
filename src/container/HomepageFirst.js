@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MdOutlineArrowDownward} from "react-icons/md";
 import Modal from './../container/modalSend'
 import {LineBlockHeadOfPage} from './lineBlockHeadOfPage'
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
