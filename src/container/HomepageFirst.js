@@ -16,7 +16,7 @@ function HomepageFirst() {
   return (
     <div className='homepage-first'>
       <h1>КТО   МЫ</h1>
-      <LineBlockHeadOfPage/>
+      <LineBlockHeadOfPage page='homepage'/>
     </div>
     )
 }

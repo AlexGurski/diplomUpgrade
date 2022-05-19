@@ -1,3 +1,6 @@
+.news-first{
+  background:url('./../img/background/method-bg-2.jpg')0 0/100% 100% no-repeat;
+}
 .news{
   display: flex;
   flex-direction: column;

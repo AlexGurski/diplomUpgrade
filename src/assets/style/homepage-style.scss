@@ -30,6 +30,9 @@
             align-items: center;
             & > div{
                 padding: 0 1em;
+                @media screen and (orientation:portrait) {
+                    display: none;
+                }
             }
         }
         @media screen and (orientation:portrait) {

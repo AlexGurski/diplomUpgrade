@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../assets/style/news.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { LineBlockHeadOfPage } from '../container/lineBlockHeadOfPage';
 
 const ModalNews = (props) =>
   <div id="open-modal" className="modal-window">
@@ -36,10 +37,14 @@ const News = ({news}) => {
 
 
   return (
-    <div className='news'>    
-    <h2 data-aos-duration="1500" data-aos="fade-down">НОВОСТИ</h2>  
+    <>
+     <div className='homepage-first news-first'>
+      <h1>НАШИ НОВОСТИ</h1>
+      <LineBlockHeadOfPage page='news'/>
+    </div>
+    <div className='news' >    
     {modal?<ModalNews  onModalClose={()=>{setModal(!modal)}} state={modal} news={count}/>:undefined}
-       <div className='news-container'>
+       <div className='news-container' id='newss'>
          {
           state.reverse().map(el=>
           
@@ -54,7 +59,7 @@ const News = ({news}) => {
          }
       </div>
     </div>
-   
+    </>
   );
 }
 export { News } 

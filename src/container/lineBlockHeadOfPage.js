@@ -4,18 +4,87 @@ import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from 'react-icons/h
 import { Link } from 'react-router-dom';
 import {Link as Linka} from 'react-scroll'
 
-export function LineBlockHeadOfPage(props) {
+
+export function LineBlockHeadOfPage({page}) {
+    const navigate = (page) =>{
+        switch (page) {
+            case 'homepage':
+              return { 
+                  link:'homepage-about',
+                  prev:{
+                  link:'/contacts',
+                  name:'Контакты'
+                    },
+                    next:{
+                        link:'/catalog/Патроны%20токарные',
+                        name:'Каталог'
+                    }
+                }
+            case 'catalog':
+                return { 
+                    link:'catalogs',
+                    prev:{
+                    link:'/',
+                    name:'Главная'
+                      },
+                      next:{
+                          link:'/about',
+                          name:'О компании'
+                      }
+                  }
+            case 'about':
+                    return { 
+                        link:'about',
+                        prev:{
+                            link:'/catalog/Патроны%20токарные',
+                            name:'Каталог'
+                          },
+                          next:{
+                              link:'/news',
+                              name:'Новости'
+                          }
+                      }  
+            case 'news':
+                        return { 
+                            link:'newss',
+                            prev:{
+                                link:'/about',
+                                name:'О компании'
+                              },
+                              next:{
+                                  link:'/contacts',
+                                  name:'Контакты'
+                              }
+                          } 
+            case 'contacts':
+                return { 
+                    link:'contacts',
+                    prev:{
+                        link:'/news',
+                        name:'Новости'
+                        },
+                    next:{
+                        link:'/',
+                        name:'Главная'
+                    }
+            }                
+            default:
+              alert( "Нет таких значений" );
+          }
+    }
+    let lineNavigate = navigate(page)
+ 
 
     return (
     <div className="all_line" >
         <div>
-            <Link to='/contacts'className='all_line_arrow'><HiOutlineArrowNarrowLeft/></Link> 
-            <div>Контакты</div>
+            <Link to={lineNavigate.prev.link} className='all_line_arrow'><HiOutlineArrowNarrowLeft/></Link> 
+            <div>{lineNavigate.prev.name}</div>
         </div>
-        <Linka to="homepage-about"  duration={2000} spy={true} smooth={true} className='all_line_center'>Прокрутите страницу</Linka>
+        <Linka to={lineNavigate.link}  duration={2000} spy={true} smooth={true} className='all_line_center'>Прокрутите страницу</Linka>
         <div>
-                <div>Каталог</div>
-                <Link to='/catalog/Патроны%20токарные'className='all_line_arrow'><HiOutlineArrowNarrowRight/></Link>
+                <div>{lineNavigate.next.name}</div>
+                <Link to={lineNavigate.next.link} className='all_line_arrow'><HiOutlineArrowNarrowRight/></Link>
         </div>
     </div>
 

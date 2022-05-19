@@ -1,3 +1,6 @@
+.about-first{
+  background:url('./../img/background/beliefs-compressor.jpg')0 0/100% 100% no-repeat;
+}
 .about-show-container{
     display: flex;
     justify-content: center;

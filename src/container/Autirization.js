@@ -66,12 +66,22 @@ const [regbox, setRegbox] = useState({display:'none'})
       auto.orderByKey().on("child_added", snapshot => { 
         console.log(snapshot.val())
         if (snapshot.val().login === login){
-          setText('Такой пользователь уже существует')
           rez=false
         } 
-        if(rez){setText('Создан новый пользователь!')
-          firebase.database().ref(`/users/${login}/`).update({login:login, password:password, permission:0, likes:''});}
+       
      });
+     if(rez){setText('Создан новый пользователь!')
+     auto.update({[login]:{login:login, password:password, permission:0, likes:''}});
+     setTimeout(() => {
+      setDisplay({display:'none'}) 
+      setUser({display:'flex'}); 
+      setAccountName({purshise:'',permission:0, logined:true, name:login})
+    }, 500);
+    }
+     else{
+      setText('Такой пользователь уже существует')
+     
+     }
     }
     
   }

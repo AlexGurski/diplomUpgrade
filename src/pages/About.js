@@ -6,7 +6,7 @@ import firebaseConfig from '../container/base';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import {AboutCompany, OurPossibility} from '../container/aboutContainer'
-
+import { LineBlockHeadOfPage } from '../container/lineBlockHeadOfPage';
 
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database().ref('about');
@@ -29,7 +29,13 @@ const database = app.database().ref('about');
 const About = () => {
   const [name, setName] = useState('О компании')
   return (
-    <div className='productions'>   
+    <>
+     <div className='homepage-first about-first'>
+      <h1>О НАС</h1>
+      <LineBlockHeadOfPage page='about'/>
+    </div>
+    
+    <div className='productions' id='about'>   
     <FeedBack /> 
       <div className='productions-container'>
         <List onChangeList={(name)=>{setName(name)}} state={name}/>
@@ -42,7 +48,7 @@ const About = () => {
       </div>
         
     </div>
-   
+    </>
   );
 }
 export { About } 
