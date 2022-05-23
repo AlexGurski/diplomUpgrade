@@ -6,6 +6,14 @@
 	font-family: 'Freight'; 
 	src: url(./../font/FreightSansLightSC.ttf); 
 }
+@font-face {
+	font-family: 'Golos'; 
+	src: url(./../font/Lack.otf); 
+}
+@font-face {
+	font-family: 'Ronia'; 
+	src: url(./../font/20707.ttf); 
+}
 
 *{
     margin: 0;
@@ -21,11 +29,11 @@
     font-weight: 800;
   }
   h2{
-
+    font-size: 30px;
   }
   h3{
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
   }
   h4{
     font-weight: 500;

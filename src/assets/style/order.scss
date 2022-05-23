@@ -10,10 +10,43 @@
     &_content{
         width: 100%;
         height: 70%;
-        border: 1px solid red;
         overflow: auto;
-        & > div{
+        margin-top: 2em;
+        &_imagecounter{
+            display: flex;
+            flex-direction: column;
+            span{
+                display: flex;
+                width: 150px;
+                font-size: 40px;
+                margin-top: 10px;
+                justify-content: center;
+
+                input{
+                    width: 40px;
+                    border: none;
+                    border-radius: 10px;
+                    margin: 0 5px;
+                    text-align: center;
+                    font-size: 20px;
+                }
+
+                
+            }
+        }
+        &_text{
+            padding-left: 1em;
+            &_desc{
+                margin-top: 1em;
+                height: 180px;
+                overflow: auto;
+            }
+        }
+        & > a{
             padding: 10px 0;
+            display: flex;
+            height: 250px;
+            border: 1px dashed burlywood;            
             img{
                 width: 150px;
                 height: 150px;

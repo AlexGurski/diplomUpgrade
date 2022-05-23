@@ -13,11 +13,20 @@ body{
   --scrollbarBorder: 0 solid var(--scrollbarBgColor);
   --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 4);
 }
+.production_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .production_catalog{
+  width: 90%;
     display: flex;
     overflow: auto;
     scrollbar-width: var(--scrollbarWidth);
     scrollbar-color: var(--scrollbarThumbColor) var(--scrollbarBgColor);
+    @media screen and (orientation:portrait) {
+      width: 100%;
+    }
     &::-webkit-scrollbar {
       width: var(--scrollbarWidth);
     }
@@ -37,11 +46,11 @@ body{
     }
     &_product{
       border-radius: 7px;
-      font-size: 14px;
+      font-size: 12px;
       margin: 10px;
-      width: 170px;
-      height: 220px;
-      background-color: white;
+      width: 130px;
+      height: 150px;
+      background-color: rgb(255, 255, 255);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -51,9 +60,9 @@ body{
       box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.22);
       transition: box-shadow .3s;
       img{
-        margin: 15px;
-        width: 110px;
-        height: 110px;
+        margin: 5px;
+        width: 70px;
+        height: 70px;
       }
       span{
         text-align: center;
@@ -67,15 +76,17 @@ body{
       }
     }
 }
-
+.productions{
+  height: 100vh;
+ 
+}
 .productions p{
-    padding-top: 4%;
+    padding-top: 1%;
     text-align: center;
 
 }
 .productions-container{
     display: flex;
-  
 }
 .productions-show-container{
     display: flex;
@@ -147,7 +158,7 @@ body{
     height: 320px;
     background-color: white;
     padding: 5px 10px 5px 10px;
-    margin: 10px;
+    margin: 20px;
     font-size: 13px;
     display: flex;
     flex-direction: column;
@@ -161,6 +172,7 @@ body{
     transform: scale(1.1);
 }
 .productions-show-item img{
+    
     width: 188px;
     height: 180px;
 }
@@ -178,8 +190,8 @@ body{
 }
 
 .text {
-  padding: 60px 20px 10px 20px;
-  font-size: 55px;
+  padding: 30px 15px 10px 20px;
+  font-size: 40px;
   text-transform: uppercase;
   text-align: center;
   text-transform: uppercase;
@@ -193,14 +205,8 @@ body{
       1px 4px 1px #919191,
       1px 5px 1px #919191,
       1px 6px 1px #919191,
-      1px 7px 1px #919191,
-      1px 8px 1px #919191,
-      1px 9px 1px #919191,
-      1px 10px 1px #919191,
   1px 18px 6px rgba(16,16,16,0.4),
   1px 22px 10px rgba(16,16,16,0.2),
-  1px 25px 35px rgba(16,16,16,0.2),
-  1px 30px 60px rgba(16,16,16,0.4);
 }
 
 @media screen  and (orientation: portrait){
@@ -209,9 +215,7 @@ body{
         text-shadow: none;
     }
     .productions-container{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+     
     }
     .productions-list{
         display: flex;

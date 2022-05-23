@@ -28,15 +28,7 @@ useEffect(()=>{
       {id}
     </p>
     <div className='productions-container'>
-    <div className='productions-list'>
-      {
-        productList.map(el=>
-          <Link to={`/catalog/${el}`}  key={el} >
-              <div lang="ru">{el}</div>
-          </Link>
-        )
-      }
-      </div>  
+     
       <div className='productions-show-container'>
       <div className='productions-show'>
         { 

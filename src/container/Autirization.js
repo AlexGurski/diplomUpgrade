@@ -87,11 +87,9 @@ const [regbox, setRegbox] = useState({display:'none'})
   }
   return (
     <>
-    <Admin display={admin} />
-    <UserAccount display={user} user={userName}/>
-   
+    {accountName.permission==2?<Admin display={admin} />:undefined}
+    {accountName.permission==0?<UserAccount display={user} user={userName}/>:undefined} 
     <div className='autorization' style={display}>
-    
     <div className="login-box">
     <div className='regauth'>
       <span className='regauth_auth regauth_button' onClick={()=>{

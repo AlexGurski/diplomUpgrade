@@ -15,10 +15,9 @@ const Menu =(props) =>{
                             <div>
                                 <ul>
                                     <li><Link to="/" onClick={()=>setCheck(!check)}>Главная</Link></li>
-                                    <li><Link to="/catalog" onClick={()=>setCheck(!check)}>Каталог</Link></li>
-                                    <li><Link to="/about" onClick={()=>setCheck(!check)}>О комании</Link></li>
+                                    <li><Link to="/catalog/Патроны%20токарные" onClick={()=>setCheck(!check)}>Каталог</Link></li>
                                     <li><Link to="/news" onClick={()=>setCheck(!check)}>Новости</Link></li>
-                                    <li><Link to="/contacts" onClick={()=>setCheck(!check)}>Контакты</Link></li>
+                                    <li><Link to="/about" onClick={()=>setCheck(!check)}>О комании</Link></li>
                                     <li><Link to="/account" onClick={()=>setCheck(!check)}>Личный кабинет</Link></li>
                                 </ul>
                             </div>
@@ -36,7 +35,7 @@ const Header = () => {
         <>
             <div className="header">
                
-                   {accountName.name!==''?
+                   {accountName.permission==0?
                   
                     <Link to='/order' className="header_box" ><FiShoppingCart className="header_box "/><span className="header_box_count">{accountName.purshise.length}</span></Link>
                   

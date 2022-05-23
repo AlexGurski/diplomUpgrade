@@ -1,3 +1,11 @@
+:root {
+    --scrollbarBg: rgba(2, 142, 74, 1);
+    --scrollbarThumb: rgba(255, 255, 255, 0.8);
+    --scrollbarWidth: 12px;
+    --scrollbarBorder: 3px solid var(--scrollbarBg);
+    --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+  }
+
 .all-admin{
     display: flex;
 }
@@ -7,22 +15,31 @@
 .admin-catalog{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-left: 100px;
-    color: white;
+    color: black;
+    @media screen and (orientation:portrait) {
+        padding: 20px 0 20px 0;
+    }
 }
 .admin-catalog *{
     width: 300px;
 }
 .feedback{
     width: 500px;
-   
-    color:white
+    color:white;
+    @media screen and (orientation:portrait){
+        width: 100%;
+        
+    }
 }
 .feedback > div{
     border: 1px dotted white;
     padding: 5px;
     margin: 5px 0;
 }
+
 .choiseBox{
     width:50px;
     height:50px;
@@ -43,7 +60,7 @@
 .newsItem{
     display: flex;
     flex-direction: column;
-    color: antiquewhite;
+    color: black;
 }
 
 
@@ -54,13 +71,28 @@
     height: 100vh;
     background-color: rgb(255, 247, 236);
     padding: 0 20px;
+    @media screen and (orientation:portrait){
+        display: flex;
+        flex-direction: column;
+        height:auto
+    }
     &_menu{
         height: 100%;
         width: 15%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap:20px;
-        padding-top: 20%;
+        @media screen and (orientation:portrait){
+            display: flex;
+            justify-content: start;
+            flex-direction: row;
+            width: 100%;
+            height: 40px;
+            overflow-y: auto;
+            margin-top: 20%;
+            font-size: 12px;
+        }
         & > span {
             padding: 10px 5px;
             border-radius: 5px;
@@ -68,25 +100,136 @@
             width: 100%;
             text-align: center;
             transition: all 1s ;
+            cursor: pointer;
+            @media screen and (orientation:portrait){
+                
+            }
             &:hover{
                 background-color: white;
             }
         }
     }
     &_content{
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        .checkOut{
+            margin-left: 20px;
+            padding: 7px 15px;
+            background-color: white;
+            width: max-content;
+            border: 1px dotted black;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover{
+                color: white;
+                background-color: black;
+            }
+        }
         height: 100%;
-        width: 85%;
+        width: 100%;
         padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h1{
-            padding: 7% 0 5% 0;
+            padding: 7% 0 2% 0;
             text-align: center;
         }
         > div{
          padding: 20px;
          margin: 10px 0;
          border-radius: 25px;
-         background-color: white;  
-         width: 50%;
+         width: 80%;
+         overflow: auto;
+         height: 70%;
+         &::-webkit-scrollbar {
+            height: 12px;
+            width: 12px;
+          }
+          &::-webkit-scrollbar-track {
+            background: rgb(255, 247, 236);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 5px;
+            border: 3px solid rgb(255, 247, 236);
+          }
+        }
+        &_feedback{
+            & > div{
+                border: 1px dashed black;
+                padding: 10px;
+                margin: 10px 0;
+                *{
+                    padding: 3px 0 3px 0;
+                }
+                @media screen and (orientation:portrait){
+                width: 100%;
+                }
+            }
+        }
+        &_order{
+            & > div{
+                border: 1px dashed black;
+                margin: 20px 0;
+                padding: 5px;
+                background-color: white;
+                & > div{
+                    display: flex;
+                    border-top: 1px solid black;
+                }
+            }
+        }
+        &_likes{
+            & > div{
+                img{
+                    margin: 0 10px 0 0 ;
+                }
+                display: flex;
+                align-items: center;
+                border: 1px dashed black;
+                margin: 20px 0;
+                padding: 5px;
+                height: auto;
+                & > div{
+                    display: flex;
+                    flex-direction: column;
+                    & > div{
+                        margin-top: 1em;
+                        height: 150px;
+                        overflow: auto;
+                        &::-webkit-scrollbar {
+                            width: var(--scrollbarWidth);
+                          }
+                        &::-webkit-scrollbar-track {
+                            background: var(--scrollbarBg);
+                            border-radius: var(--scrollbarBorderRadius);
+                          }
+                        &::-webkit-scrollbar-thumb {
+                            background-color: var(--scrollbarThumb);
+                            border-radius: var(--scrollbarBorderRadius);
+                            border: var(--scrollbarBorder);
+                          }
+                    }
+
+
+                }
+            }
+        }
+        &_profile{
+           flex-direction: column;
+           & > div{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            border: 1px dashed black;
+            padding: 20px;
+           }
+            input{
+             margin: 15px 5px 0 0;
+           }
         }
     }
 }

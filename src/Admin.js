@@ -28,6 +28,12 @@ export const Admin = ({display}) => {
     date:now
   })
 
+  const [adminChoise, setAdminChoise] = useState({
+    catalog:{display:'none'},
+    feedback:{display:'none'},
+    news:{display:'none'},
+    users:{display:'none'},
+  })
   const [type, setType] = useState('Гантели сборные РГ6М, РГ15М');
   const [name, setName] = useState('');
   const [discription, setDiscription] = useState([]);
@@ -172,11 +178,17 @@ const responsed = (e, clickY, clickX) =>{
 }
   return (
     <>
-    <div className='all-admin' style={styleAdmin}>
-     
-      {box}
-    <div  className='admin-catalog'> 
+    <div className='all_userAccount' style={styleAdmin}>
+    <div className='all_userAccount_menu'>
+       <span onClick={()=>{setAdminChoise({catalog:{display:'flex'}, feedback:{display:'none'}, news:{display:'none'}, users:{display:'none'}})}}>Каталог</span>
+       <span onClick={()=>{setAdminChoise({catalog:{display:'none'}, feedback:{display:'block'}, news:{display:'none'}, users:{display:'none'}})}}>Заявки</span>
+       <span onClick={()=>{setAdminChoise({catalog:{display:'none'}, feedback:{display:'block'}, news:{display:'none'}, users:{display:'none'}})}}>Заказы</span>
+       <span onClick={()=>{setAdminChoise({catalog:{display:'none'}, feedback:{display:'none'}, news:{display:'flex'}, users:{display:'none'}})}}>Новости</span>
+       <span onClick={()=>{setAdminChoise({catalog:{display:'none'}, feedback:{display:'none'}, news:{display:'none'}, users:{display:'flex'}})}}>Пользователи</span>
+     </div>
 
+      {box}
+    <div  className='admin-catalog' style={adminChoise.catalog}> 
     <select onChange={e=>setEditType(e.target.value)}>
        <option>Добавить</option>
        <option>Редактировать</option>
@@ -227,7 +239,7 @@ const responsed = (e, clickY, clickX) =>{
     }
    {editType!=='Редактировать'&& editType!=='Удалить'? <input type='text' value={name} onChange={(e) => setName(e.target.value)}/>:undefined}
 
-    discription
+    Описание
 
    {editType==='Редактировать'|| editType==='Удалить'? discription.map((el,index)=> 
        <textarea  defaultValue={el} onChange={(e) =>{
@@ -251,25 +263,25 @@ const responsed = (e, clickY, clickX) =>{
         :undefined 
     }
      
-      notation
+      Комплектация
       <input type='text'  value={notationName} onChange={(e) => setNotationName(e.target.value)} />
       <input type='text'  value={notationValue} onChange={(e) => setNotationValue(e.target.value)} />
-      picture
+      Изображение
       <input type='text'  value={picture} onChange={(e) => setPicture(e.target.value)} />
-      plan
+      Чертеж
       <input type='text'  value={plan} onChange={(e) => setPlan(e.target.value)} />
-      pdf
+      PDF-файл
      
       <textarea  value={pdf} onChange={(e) => setPdf(e.target.value)}></textarea>
-      video
+      Видео
       <input type='text'  value={video}  onChange={(e) => setVideo(e.target.value)} />
       {editType!=='Удалить'? <input type='button' onClick={()=>{addToDB(); setName(''); setNotationName(''); setNotationValue(''); setPicture(''); setPlan(''); setPdf(''); setVideo(''); setDiscription([])}} value='сохранить'/> :undefined} 
       {editType==='Удалить'?<input type='button' onClick={()=>firebase.database().ref('catalog/'+type+'/'+name).remove()} value='Удалить'/>:undefined}    
       
     </div>
     
-      <div className='feedback'>
-          {Object.keys(feedback).map((el)=>
+      <div className='feedback' style={adminChoise.feedback}> 
+          {Object.keys(feedback).reverse().map((el)=>
           <div  onClick={click=>responsed(el, click.clientY, click.clientX)} key={el} style={responsibleColor(feedback[el].response)}>
             <h2>{feedback[el].name}</h2>
             <h5>{feedback[el].organization}</h5>
@@ -278,7 +290,7 @@ const responsed = (e, clickY, clickX) =>{
             <h3>{feedback[el].id}</h3>
           </div>)}
       </div>
-      <div className='newsAdmin'>
+      <div className='newsAdmin' style={adminChoise.news}>
          <div className='newsItem'>
            название
            <input type='text'   onChange={(e) => setTexta({...textar,name:e.target.value,date:now})} />

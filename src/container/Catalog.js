@@ -21,8 +21,8 @@ const Catalog = ({db}) => {
     },[db])
 
   return (
-    <div className='production_catalog'>
-       
+    <div className='production_container'>
+       <div className='production_catalog'>
        {
         Object.keys(state).map(el=>
               <Link to={`/catalog/${el}`} key={el}>
@@ -30,7 +30,7 @@ const Catalog = ({db}) => {
                </Link>
         )
       }
-  
+  </div>
 </div>
   );
 }

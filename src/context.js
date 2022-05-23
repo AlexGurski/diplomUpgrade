@@ -7,7 +7,7 @@ export const UserProvider  = ({children}) =>{
         name:'',
         purshise:'',
         logined:false,
-        permission:0
+        permission:3
     })
     return (
         <UserContext.Provider value={{accountName,setAccountName}}>

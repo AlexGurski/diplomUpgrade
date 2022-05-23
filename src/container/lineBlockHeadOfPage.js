@@ -12,7 +12,7 @@ export function LineBlockHeadOfPage({page}) {
               return { 
                   link:'homepage-about',
                   prev:{
-                  link:'/contacts',
+                  link:'/about',
                   name:'Контакты'
                     },
                     next:{
@@ -28,31 +28,19 @@ export function LineBlockHeadOfPage({page}) {
                     name:'Главная'
                       },
                       next:{
-                          link:'/about',
-                          name:'О компании'
-                      }
+                        link:'/news',
+                        name:'Новости'
+                    }
                   }
-            case 'about':
-                    return { 
-                        link:'about',
-                        prev:{
-                            link:'/catalog/Патроны%20токарные',
-                            name:'Каталог'
-                          },
-                          next:{
-                              link:'/news',
-                              name:'Новости'
-                          }
-                      }  
             case 'news':
                         return { 
                             link:'newss',
                             prev:{
-                                link:'/about',
-                                name:'О компании'
+                                link:'/catalog/Патроны%20токарные',
+                                name:'Каталог'
                               },
                               next:{
-                                  link:'/contacts',
+                                  link:'/about',
                                   name:'Контакты'
                               }
                           } 

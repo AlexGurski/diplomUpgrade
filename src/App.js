@@ -10,7 +10,6 @@ import { Contacts } from './pages/Contacts';
 import { Order } from './pages/Order';
 import { Autorization } from './container/Autirization';
 import {News} from './pages/News';
-import {About} from './pages/About';
 import './assets/style/all-style.css'
 import firebaseConfig from './container/base';
 import firebase from 'firebase/compat/app';
@@ -48,8 +47,7 @@ const App = () =>{
                     <Route path="/search/:id" element={<Search  db={state}/>} />
                     <Route path="/catalog/:id/:product" element={<Product db={state}/>} />
                     <Route path='/news' element={<News news={stateNews}/> }/>  
-                    <Route path='/contacts' element={<Contacts/> }/>  
-                    <Route path='/about' element={<About/> }/> 
+                    <Route path='/about' element={<Contacts/> }/>  
                     <Route path='/account' element={<Autorization/> }/> 
                     <Route path='/order' element={<Order db={state}/> }/> 
                     <Route path='/*' element={<NotFound/> }/>  

@@ -30,19 +30,19 @@ useEffect(()=>{
       <LineBlockHeadOfPage page='catalog'/>
     </div>
     <span id='catalogs'></span>
-   <Catalog db={db} />
+  
    
     <div className='productions' >  
     <p className="text" lang="ru">
       {id}
     </p>
+    <Catalog db={db} />
     <div className='productions-container'>
   
       <div className='productions-show-container'>
       <div className='productions-show'>
         { 
            Object.keys(productName).map(el=>{
-            console.log(productName) 
             return(
               el=='image'?undefined:
               <Link to={`/catalog/${id}/${el}`}  key={el} data-aos="zoom-in" data-aos-duration="1500">

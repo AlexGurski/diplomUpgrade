@@ -8,6 +8,7 @@ import FeedBack from '../container/FeedBack'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { LineBlockHeadOfPage } from '../container/lineBlockHeadOfPage';
+import { About } from './About';
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database().ref('contacts');
 
@@ -32,12 +33,11 @@ function Contacts() {
   return (
 <>
 <div className='homepage-first contacts-first'>
-      <h1>НАШИ КОНТАКТЫ</h1>
+      <h1>О НАС</h1>
       <LineBlockHeadOfPage page='contacts'/>
 </div>
-   
+<About/>
 <div className="contacts" id='contacts'>
-<FeedBack /> 
   <div className='contacts-container'>
     <div className='contacts-left'>
     <h2>Контакты</h2>
@@ -73,6 +73,7 @@ function Contacts() {
      </YMaps>
     </div>
   </div>
+  
   <div className='info-table'>
     
   <ul className="responsive-table">
@@ -95,6 +96,7 @@ function Contacts() {
   </ul>
   </div>
 </div>
+
 </>
   );
 }
